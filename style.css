@@ -1,1 +1,63 @@
-hi
+/* Style reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*::after, *::before {
+    box-sizing: inherit;
+}
+/* End of style reset */
+
+:root {
+    --first-color: ;
+    --second-color: ;
+    --third-color: ;
+    --forth-color: ;
+
+    --palette-bgc: #5f605c;
+}
+
+.board{
+    /* size of the board */
+    width: 100vw;
+    height: 100vh;
+    /* background-color: black; */
+
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-areas: "palette drawings";
+}
+
+.palette {
+    grid-area: palette;
+    padding: 2vmin;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: var(--palette-bgc);
+}
+
+.pen-shape {
+    background-color: white;
+    width: 70%;
+    height: 20%;
+
+}
+
+.eraser{
+    width: 30%;
+}
+
+.colors {
+    width: 30%;
+}
+
+.drawings {
+    grid-area: drawings;
+}

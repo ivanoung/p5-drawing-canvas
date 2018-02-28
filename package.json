@@ -1,0 +1,19 @@
+{
+  "name": "p5-drawing-canvas",
+  "version": "1.0.0",
+  "description": "Drawing canvas project by using p5",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanoung/p5-drawing-canvas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanoung/p5-drawing-canvas/issues"
+  },
+  "homepage": "https://github.com/ivanoung/p5-drawing-canvas#readme"
+}
