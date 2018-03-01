@@ -1,3 +1,4 @@
+
 /* Style reset */
 html, body {
     margin: 0;
@@ -6,7 +7,7 @@ html, body {
     box-sizing: border-box;
 }
 
-*::after, *::before {
+*::after, *::before{
     box-sizing: inherit;
 }
 /* End of style reset */
@@ -18,7 +19,8 @@ html, body {
     --forth-color: ;
 
     --palette-bgc: #5f605c;
-    --color-ring: #181013;
+    --color-ring: #272738;
+    --color-ring-shades: #2b2c49;
 
 
     --palette-ring-radius2: 6vmin;
@@ -31,7 +33,7 @@ html, body {
     /* background-color: black; */
 
     display: grid;
-    grid-template-columns: 20% 1fr;
+    grid-template-columns: 10% 1fr;
     grid-template-areas: "palette drawings";
 }
 
@@ -40,6 +42,7 @@ html, body {
     padding: 2vmin;
 
     display: flex;
+    flex-wrap: wrap; 
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -49,45 +52,53 @@ html, body {
 
 .pen-shape {
     /* background-color: white; */
-    width: 70%;
-    height: 20%;
-    background: url("/img/round-stroke.jpg");
+    width: 10vmin;
+    height: 10vmin;
+    
+    background: url("/img/round-stroke.png");
     background-size: cover;
     
 
 }
 
 .eraser{
-    width: 20%;
-    height: auto;
+    width: 8vmin;
+    height: 8vmin;
 }
 
 .colors {
     width: var(--palette-ring-radius2);
     height: var(--palette-ring-radius2);
-    border: var(--color-ring) 2px solid;
+    border: var(--color-ring) 3px solid;
     border-radius: 50%;
+    transition: all .3s ease-in;
 }
 
-/* .palette>:nth-child(3){
-    background-color: red;
+.colors:hover {
+    border: white 3px solid;
 }
-.palette>:nth-child(4){
-    background-color: blueviolet;
-}
-.palette>:nth-child(5){
-    background-color: greenyellow;
-}
-.palette>:nth-child(6){
-    background-color: teal;
-}
-.palette>:nth-child(7){
-    background-color: grey;
-} */
+
+
 .inset-ring {
-    box-shadow: inset .3vmin .3vmin .5vmin, inset -.3vmin -.3vmin .5vmin, inset -.3vmin .3vmin .5vmin, inset .3vmin -.3vmin .5vmin;
+    box-shadow: 
+    inset var(--color-ring) .3vmin .3vmin 1vmin,
+    inset var(--color-ring) -.3vmin -.3vmin 1vmin, 
+    inset var(--color-ring) -.3vmin .3vmin 1vmin, 
+    inset var(--color-ring) .3vmin -.3vmin 1vmin;
 }
 
 .drawings {
     grid-area: drawings;
 }
+
+/* @media (max-width: 600px){
+    .board {
+
+        grid-template-rows: 1fr 10%;
+        grid-template-areas: "drawings","palette";
+    }
+    .palette{
+        display: flex;
+        flex-direction: row;
+    }
+} */

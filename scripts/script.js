@@ -7,7 +7,11 @@ let colr = [
     "#fff275",
     "#ff8c42",
     "#ff3c38",
-    "#a23e48"
+    "#a23e48",
+    "#c649ff",
+    "#48ffa7",
+    "#d4f0fb",
+    "#a4e3d2"
 ];
 
 
@@ -39,16 +43,19 @@ function mouseDragged() {
     // stroke.draw(mouseX,mouseY);
 }
 
+function windowResized(){
+    canv = resizeCanvas(dwWidth,dwHeight);
+    canv.parent('drawing');
+}
+
 // $(".colors").click(function () {
 // });
 
 $(document).ready(function () {
     console.log("test");
-    $("#cl1").css("background-color", colr[0]);
-    $("#cl2").css("background-color", colr[1]);
-    $("#cl3").css("background-color", colr[2]);
-    $("#cl4").css("background-color", colr[3]);
-    $("#cl5").css("background-color", colr[4]);
+    for (let i = 0; i<colr.length; i++){
+        $(`#cl${i+1}`).css("background-color",colr[i]);
+    }
 });
 
 // Reset drawing
