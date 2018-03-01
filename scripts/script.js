@@ -1,27 +1,63 @@
-function setup(){
-    var canv = createCanvas(displayWidth,displayHeight);
+var dwWidth = document.getElementById("drawing").offsetWidth;
+var dwHeight = document.getElementById("drawing").offsetHeight;
+
+
+let colr = [
+    "#6699cc",
+    "#fff275",
+    "#ff8c42",
+    "#ff3c38",
+    "#a23e48"
+];
+
+
+
+function setup() {
+    var canv = createCanvas(dwWidth, dwHeight);
     canv.parent('drawing');
-    background(0);
-    strokeWeight(10);
-    stroke(255);
-    frameRate(60);
+    // background(0);
+    strokeWeight(5);
+    stroke("#555555");
+    frameRate(80);
 }
 
 class StrokeShape {
-    constructor (_r){
+    constructor(_r) {
         this.r = _r;
     }
-    draw(_x,_y){
-        ellipse(_x,_y,this.r,this.r);
+    draw(_x, _y) {
+        ellipse(_x, _y, this.r, this.r);
     }
 
 
 }
 
-function mouseDragged(){
-    console.log("hi");
-    line(mouseX,mouseY, pmouseX, pmouseY);
+function mouseDragged() {
+    line(mouseX, mouseY, pmouseX, pmouseY);
     // return false;
     // var stroke = new StrokeShape(10); 
     // stroke.draw(mouseX,mouseY);
 }
+
+// $(".colors").click(function () {
+// });
+
+$(document).ready(function () {
+    console.log("test");
+    $("#cl1").css("background-color", colr[0]);
+    $("#cl2").css("background-color", colr[1]);
+    $("#cl3").css("background-color", colr[2]);
+    $("#cl4").css("background-color", colr[3]);
+    $("#cl5").css("background-color", colr[4]);
+});
+
+// Reset drawing
+$(".eraser").click(() => {
+    background(255);
+})
+
+$(".colors").click(function(){
+    let clickColor = $(this).css("background-color");
+    // console.log(clickColor);
+    stroke(clickColor);
+})

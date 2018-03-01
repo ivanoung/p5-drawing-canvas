@@ -18,6 +18,10 @@ html, body {
     --forth-color: ;
 
     --palette-bgc: #5f605c;
+    --color-ring: #181013;
+
+
+    --palette-ring-radius2: 6vmin;
 }
 
 .board{
@@ -44,18 +48,44 @@ html, body {
 }
 
 .pen-shape {
-    background-color: white;
+    /* background-color: white; */
     width: 70%;
     height: 20%;
+    background: url("/img/round-stroke.jpg");
+    background-size: cover;
+    
 
 }
 
 .eraser{
-    width: 30%;
+    width: 20%;
+    height: auto;
 }
 
 .colors {
-    width: 30%;
+    width: var(--palette-ring-radius2);
+    height: var(--palette-ring-radius2);
+    border: var(--color-ring) 2px solid;
+    border-radius: 50%;
+}
+
+/* .palette>:nth-child(3){
+    background-color: red;
+}
+.palette>:nth-child(4){
+    background-color: blueviolet;
+}
+.palette>:nth-child(5){
+    background-color: greenyellow;
+}
+.palette>:nth-child(6){
+    background-color: teal;
+}
+.palette>:nth-child(7){
+    background-color: grey;
+} */
+.inset-ring {
+    box-shadow: inset .3vmin .3vmin .5vmin, inset -.3vmin -.3vmin .5vmin, inset -.3vmin .3vmin .5vmin, inset .3vmin -.3vmin .5vmin;
 }
 
 .drawings {
